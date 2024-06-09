@@ -3,6 +3,10 @@
         "*.ejs": "html",
         ".env*": "dotenv",
         "ostream": "cpp",
-        "string": "cpp"
-    }
+        "string": "cpp",
+        "iostream": "cpp"
+    },
+    "cSpell.words": [
+        "Celcius"
+    ]
 }
