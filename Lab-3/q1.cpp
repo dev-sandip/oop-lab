@@ -40,6 +40,6 @@ int main()
     f.setTemp(212);
     c.setTemp(100);
     cout << "100 Celcius in Fahrenheit is: " << c.toFahrenheit() << endl;
-    cout << "100 Fahrenheit in Celcius is: " << f.toCelcius() << endl;
+    cout << "212 Fahrenheit in Celcius is: " << f.toCelcius() << endl;
     return 0;
 }
