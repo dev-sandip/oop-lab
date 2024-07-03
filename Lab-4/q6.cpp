@@ -1,28 +1,38 @@
 // Create a class with a data member to hold a "serial number" for each object created from the class. That is, the first object created will be numbered 1, the second 2, and so on by using the basic concept of static data members. Use static member function if it is useful in the program. Otherwise, make a separate program that demonstrates the use of static member function.
-#include <iostream> //or
+#include <iostream>
 using namespace std;
-class Serial
+class SerialNumber
 {
-    static int serialNumber;
+private:
+    static int nextSerialNumber;
+    int serialNumber;
 
 public:
-    Serial()
+    SerialNumber()
     {
-        serialNumber++;
+        serialNumber = nextSerialNumber++;
     }
-    static void showNum(void)
+
+    int getSerialNumber() const
     {
-        cout << "object serial number:\t" << serialNumber << endl;
+        return serialNumber;
+    }
+    static int getNextSerialNumber()
+    {
+        return nextSerialNumber;
     }
 };
-int Serial::serialNumber = 0;
+
+int SerialNumber::nextSerialNumber = 1;
+
 int main()
 {
-    Serial a;
-    a.showNum();
-    Serial b;
-    b.showNum();
-    Serial c;
-    c.showNum();
+    SerialNumber obj1;
+    SerialNumber obj2;
+    SerialNumber obj3;
+    cout << "Object 1 Serial Number: " << obj1.getSerialNumber() << endl;
+    cout << "Object 2 Serial Number: " << obj2.getSerialNumber() << endl;
+    cout << "Object 3 Serial Number: " << obj3.getSerialNumber() << endl;
+    cout << "Next Serial Number: " << SerialNumber::getNextSerialNumber() << endl;
     return 0;
 }
