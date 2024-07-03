@@ -8,19 +8,18 @@ private:
     string deptName;
 
 public:
-    Department(int id, string name);
-    ~Department();
+    Department(int id, string name)
+    {
+        deptID = id;
+        deptName = name;
+        cout << "Object " << deptName << " is created" << endl;
+    };
+    ~Department()
+    {
+        cout << "Object " << deptName << " goes out of the scope" << endl;
+    };
 };
-Department ::Department(int id, string name)
-{
-    deptID = id;
-    deptName = name;
-    cout << "Object " << deptName << " is created" << endl;
-}
-Department ::~Department()
-{
-    cout << "Object " << deptName << " goes out of the scope" << endl;
-}
+
 int main()
 {
     Department d1(1, "CSE");
